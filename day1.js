@@ -1,27 +1,26 @@
-// You are given an array prices where prices[i] is the price of a given stock on the ith day.
-// You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
-// Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-// Input: prices = [7,1,5,3,6,4]
-// Output: 5
-// Input: prices = [7,6,4,3,1]
-// Output: 0
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+// You can return the answer in any order.
+
+// Example 1:
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 /**
- * @param {number[]} prices
- * @return {number}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
  */
- const maxProfit = (prices) => {
-    let minPrice = prices[0]
-    let maxProfit = 0;
-    prices.forEach((val) => {
-        if (val < minPrice) {
-            minPrice = val;
+ var twoSum = function(nums, target) {
+    const newObj = {};
+    nums.forEach((i, ind) => newObj[i] = ind)
+    
+    for( let i = 0; i < nums.length; i++) {
+        const diff = target - nums[i];
+        if (newObj[diff] && newObj[diff] !== i) {
+            return [i,newObj[diff]];
         }
-        if (val - minPrice > maxProfit) {
-            maxProfit = val - minPrice;
-        }
-    });
-    return maxProfit;
+    }
+    return [];
 };
-
-maxProfit([7, 1, 5, 3, 6, 4]);
