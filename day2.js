@@ -18,7 +18,7 @@
  * @param {number} x
  * @return {number}
  */
- const reversenum = (x) => {
+const reversenum = (x) => {
     const polarity = (x < 0) ? -1 : 1;
     const convsrtedStr = Array.from(x.toString()).reverse().join('');
     const newStr = Number.parseInt(convsrtedStr);
@@ -32,7 +32,7 @@ const reversenum2 = (x) => {
     const polarity = (x < 0) ? -1 : 1;
     const str = x.toString();
     let revertedStr = '';
-    for( let i = str.length-1; i >= 0; i--) {
+    for (let i = str.length - 1; i >= 0; i--) {
         revertedStr += str[i];
     }
     const newStr = Number.parseInt(revertedStr);
