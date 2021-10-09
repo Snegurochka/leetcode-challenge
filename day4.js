@@ -36,6 +36,7 @@ var romanToInt = function (s) {
     for (let i = 0; i < s.length; i++) {
         const curr = hashMap[s[i]];
         const next = hashMap[s[i + 1]];
+        // for IV and IV cases
         if (curr < next) {
             intVal += next - curr;
             i++;
