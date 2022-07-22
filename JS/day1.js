@@ -7,6 +7,20 @@
 // Output: [0,1]
 // Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+// o2 complexity
+// function twoSum(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//       let sum = 0;
+//       for (let y = i + 1; y < nums.length; y++) {
+//         sum = nums[i] + nums[y];
+//         if (sum === target) {
+//           return [i, y];
+//         }
+//       }
+//     }
+//     return [];
+//   }
+
 /**
  * @param {number[]} nums
  * @param {number} target
